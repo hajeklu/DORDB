@@ -1,0 +1,44 @@
+/*
+1) Zaregistrování uživatele
+
+Název: new_user
+Parametry: first_name, last_name, role, password, login, email_address.
+Popis: procedura vytvoøí nový záznam v tabulce A_User.
+
+
+
+2) Pøidání novì koupeného poèítaèe do databáze:
+
+Pokud se jedná o model poèítaèe, který v databázi ještì nemáme, musíme nejdøíve vytvoøit nový záznam modelu:
+
+	Vytvoøení modelu poèítaèe
+
+	Název: new_computer_brand
+	Parametry: brand_maker, model.
+	Popis: procedura vytvoøí nový záznam v tabulce A_Computer_brand.
+
+
+Pokud se jedná o poèítaè, který má OS, který v databázi ještì nemáme, musíme nejprve vytvoøit nový záznam OS:
+
+	Vytvoøení OS
+
+	Název: new_os
+	Parametry: name, version.
+	Popis: procedura vytvoøí nový záznam v tabulce A_OS.
+
+
+Pokud se jedná o poèítaè, jehož kombinaci parametrù v databázi ještì nemáme, musíme nejprve vytvoøit nový záznam této kombinace:
+
+	Vytvoøení kombinace parametrù poèítaèe
+
+	Název: new_computer_parameters
+	Parametry: external_GPU, optical_disk_drive, HDD, processor, RAM.
+	Popis: procedura vytvoøí nový záznam v tabulce A_Computer_parameters.
+
+
+Poté teprve následuje samotné vytvoøení poèítaèe
+
+Název: new_computer
+Parametry: prilet, odlet, ID_letiste_odlet, ID_letiste_prilet, ID_letadlo
+Popis: procedura vytvoøí poèítaè s urèitými charakteristikami. Poèítaè sváže s uživatelem, výrobcem daného modelu, operaèním systémem a kombinací parametrù.
+*/
