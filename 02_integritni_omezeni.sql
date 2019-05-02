@@ -1,0 +1,33 @@
+/*
+A) Triviální integritní omezení
+Tabulka A_Computer
+Atribut discarded_time musí být vìtší než create_time.
+Atribut guarantees musí být vìtší než create_time.
+Atribut last_update_time musí být vìtší než create_time.
+Atribut mac_address musí být neprázdný a unikátní - zajištìno unikátním klíèem.
+Atribut computer_name nesmí být prázdný.
+
+Tabulka A_User
+Atribut user_first_name nesmí být prázdný.
+Atribut user_last_name nesmí být prázdný.
+Atribut user_email_address musí mít podobu emailové adresy a musí být unikátní.
+Atribut user_login musí být nenulový øetìz a musí být unikátní - zajištìno unikátním klíèem
+Atribut user_password nesmí být prázdný.
+Atribut user_role nesmí být prázdný.
+
+Tabulka A_Computer_parameters
+Atribut hdd > 0
+Atribut ram > 0
+Atribut extername_GPU nesmí být prázdný.
+Atribut optical_disk_drive nesmí být prázdný.
+Atribut processor nesmí být prázdný.
+
+Tabulka A_OS
+Atribut os_name nesmí být prázdný.
+Atribut os_version > 0
+
+
+B) Netriviální integritní omezení
+Tabulka A_Computer
+Jsou-li v tabulce A_Computer_brand vyplnìny atributy computer_brand_maker a computer_model pro daný poèítaè, pak musí být v tabulce A_Computer vyplnìn i atribut serial_number
+*/

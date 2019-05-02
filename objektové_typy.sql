@@ -1,4 +1,6 @@
--- objektovı pøístup
+/*
+ objektovı pøístup
+*/
 
 create type t_user as object(
     user_id NUMBER,
