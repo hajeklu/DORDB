@@ -5,8 +5,8 @@
 CREATE TABLE A_COMPUTER
 ( 
    computer_id NUMBER,
-   bpcs_seassions VARCHAR2(255),
-   comments VARCHAR2(255),
+   bpcs_sessions VARCHAR2(255),
+   comments VARCHAR2(1023),
    create_time DATE,
    discarded_time DATE,
    guarantees DATE,
