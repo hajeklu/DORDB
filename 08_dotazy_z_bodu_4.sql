@@ -3,12 +3,12 @@ SET AUTOTRACE ON;
 /*
  1. vypsat jména uživatelù, jejichž poèítaèe mají OS macOS (JOIN)
 */
-select u.user_first_name as Jméno, u.user_last_name as Pøíjmení, c.computer_name as Název_poèítaèe, o.os_name as Název_OS from a_user u JOIN a_computer c on (u.user_id=c.user_id) join a_os o on (c.os_id=o.os_id) where o.os_name='macOS';
+select u.user_first_name as Jméno, u.user_last_name as Pøíjmení, c.computer_name as Název_poèítaèe, o.os_name as Název_OS from a_user u JOIN a_computer c on (u.user_id=c.user_id) join a_os o on (c.os_id=o.os_id) where o.os_name='MacOS';
 
 /*
  1. vypsat jména uživatelù, jejichž poèítaèe mají OS macOS (Object)
 */
-select u.user_first_name as Jméno, u.user_last_name as Pøíjmení, c.computer_name as Název_poèítaèe, o.os_name as Název_OS  from obj_a_user u, obj_a_computer c, obj_a_os o where c.os.os_name='macOS';
+select u.user_first_name as Jméno, u.user_last_name as Pøíjmení, c.computer_name as Název_poèítaèe, o.os_name as Název_OS  from obj_a_user u, obj_a_computer c, obj_a_os o where c.os.os_name='MacOS';
 
 
 /*

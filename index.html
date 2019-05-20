@@ -1,115 +1,167 @@
-
 <!DOCTYPE html>
 <html lang="cs">
-    <head>
-        <meta charset="UTF-8" />
-        <title>DORDB projekt</title>
 
-        <style>        
-            body {
-                font-family: Calibri, sans-serif;
-                font-size: 100%;
-                line-height: 160%;
-            }
-            
-            .okraj {
-                max-width: 999px;
-                margin: 0 auto;
-                box-shadow: 0 0 100px #888;
-                padding: 10px;
-            }
-            
-            h1, h2, h3 {
-                background-color: lightblue;
-                padding: 5px;
-                padding-left: 1em;
-            }
-            h1 {
-                text-align: center;
-            }
-            a, a:active, a:visited {
-                color: #0031ec;
-            }
-            
-            a:hover {
-                color:#ec0000;
-            }
-            
-            .info {
-                background-color: yellow;
-                padding: 1em;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="okraj">
-            <h1>Počítačová databáze - projekt DORDB</h1>
-            
-            <h2>1. E-R diagram</h2>
-            <p><a href="er_diagram.png"><img src="er_diagram.png" alt="er_diagram" title="er_diagram" width="600" /></a></p>
+<head>
+  <meta charset="UTF-8" />
+  <title>DORDB projekt</title>
 
-            <h2>2. Slovní popis dodatečných integritních omezení</h2>
-              <h3>2.1. Triviální integritiní omezení</h3>
-              <p><strong>Šablona pro náš popis</strong></p>
-              <ul>
-                <li>Tabulka Computer
-                    <ul>
-                        <li>Atribut <em>computer_name</em> musí být unikátní (v továrně se nesmění nacházet dva počítače se stejným jménem).</li>
-                        <li>Atribut <em>mac_address</em> musí být unikátní.</li>
-                        <li>Atribut <em>inventory_number</em> musí být unikátní.</li>
-                        <li>Atribut <em>discarded_time</em> musí být větší jak atribut create_time (počítač nemůže být vyřezen dřive než byl vytvořen).</li>
-                    </ul>
-                </li>
-                <li>Tabulka User
-                    <ul>
-                        <li>Atribut <em>user_login</em> musí být unikátní.</li>
-                        <li>Atribut <em>user_email_address</em> musí být unikátní.</li>
-                    </ul>
-                </li>
-            </ul>
-              
-              <h3>2.1. Netriviální integritní omezení</h3>
-              
-              
-            <h2>3. Slovní návrh API rozhraní „business logiky“</h2>
-            
-                        
-            <h2>4. Pět slovně formulovaných dotazů nad schématem</h2>
-            
-            
-            
-            <h2>5. Skript, který vytvoří databázové schéma odpovídající E-R diagramu</h2>
-              <p><strong>Skript:</strong> <a href="05_db_schema.txt">05_db_schema.txt</a></p>
-            <h2>6. Skript, který vytvoří v databázovém schématu dodatečná integritní omezení</h2> 
-              <p><strong>Skript:</strong> <a href="06_integritni_omezeni_z_bodu_2.txt">06_integritni_omezeni_z_bodu_2.txt</a></p>
-            <h2>7. Skript, který naplní tabulky testovacími daty</h2>  
-              <p><strong>Skript:</strong> <a href="07_testovaci_data.txt">07_testovaci_data.txt</a></p>
-            <h2>8. Skript, který provede postupně všechny navržené dotazy z bodu 4</h2>
-              <p><strong>Skript:</strong> <a href="08_dotazy_z_bodu_4.txt">08_dotazy_z_bodu_4.txt</a></p>
-              <p><strong>Výsledky:</strong> <a href="08_vysledky_dotazu.txt">08_vysledky_dotazu.txt</a></p>
-              <p><strong>Porovnání:</strong> <a href="08_porovnani.txt">08_porovnani.txt</a></p>
-            <h2>9. Skript, který se pokusí porušit všechna dodatečná integritní omezení</h2>
-              <p><strong>Skript:</strong> <a href="09_poruseni_omezeni.txt">09_poruseni_omezeni.txt</a></p>
-              <p><strong>Výstup:</strong> <a href="09_vystup.txt">09_vystup.txt</a></p>
-            <h2>10. Skript pro vytvoření balíku (package) a procedur „business logiky“</h2>
-              <p><strong>Skript:</strong> <a href="10_balik_a_procedury.txt">10_balik_a_procedury</a></p>
-            <h2>11. Ověření procedur „business logiky“</h2>
-              <p><strong>Skript:</strong> <a href="11_testovaci_skript_procedur.txt">11_testovaci_skript_procedur.txt</a></p>
-              <p><strong>Výstupy:</strong> <a href="11_vystup.txt">11_vystup.txt</a></p>
-            <h2>12. Skript, který doplní do tabulky automaticky dopočítávaný sloupec</h2>
-              <p><strong>Skript:</strong> <a href="12_odvozene_hodnoty.txt">12_odvozene_hodnoty.txt</a></p>
-            <h2>13. Skript, který vytvoří úložiště ještě jednou v „objektové“ podobě</h2>
-              <p><strong>Skript:</strong> <a href="13_objektova_podoba.txt">13_objektova_podoba.txt</a></p>
-            <h2>14. Skript, který provede pět dotazů znovu, nad objektovými tabulkami</h2>
-              <p><strong>Skript:</strong> <a href="14_objektove_dotazy_z_bodu_4.txt">14_objektove_dotazy_z_bodu_4.txt</a></p>
-              <p><strong>Výstup:</strong> <a href="14_vystup.txt">14_vystup.txt</a></p>
-            <h2>15. Navrhněte slovně fakta a dimenze pro datový sklad</h2>
-            
-            
-            
-            
-            <h2 style="margin-top: 50px;">Skript pro vyčištění databáze</h2>
-              <p style="margin-bottom: 10px; padding-bottom: 15px;"><strong>Skript:</strong> <a href="16_drop.txt">drop.txt</a></p>
-</div>
+  <style>
+    body {
+      font-family: Calibri, sans-serif;
+      font-size: 100%;
+      line-height: 160%;
+    }
+
+    .okraj {
+      max-width: 999px;
+      margin: 0 auto;
+      box-shadow: 0 0 100px #888;
+      padding: 10px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      background-color: lightblue;
+      padding: 5px;
+      padding-left: 1em;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    a,
+    a:active,
+    a:visited {
+      color: #0031ec;
+    }
+
+    a:hover {
+      color: #ec0000;
+    }
+
+    .info {
+      background-color: yellow;
+      padding: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="okraj">
+    <h1>Počítačová databáze - projekt DORDB</h1>
+
+    <h2>1. E-R diagram</h2>
+    <p><a href="er_diagram.png"><img src="er_diagram.png" alt="er_diagram" title="er_diagram" width="600" /></a></p>
+
+    <h2>2. Slovní popis dodatečných integritních omezení</h2>
+    <h3>2.1. Triviální integritiní omezení</h3>
+    <ul>
+      <li>Tabulka COMPUTER
+        <ul>
+          <li>Atribut <em>computer_name</em> musí být unikátní (v továrně se nesmění nacházet dva počítače se stejným
+            jménem).</li>
+          <li>Atribut <em>mac_address</em> musí být unikátní.</li>
+          <li>Atribut <em>inventory_number</em> musí být unikátní.</li>
+          <li>Atribut <em>discarded_time</em> musí být větší jak atribut <em>create_time</em> (počítač nemůže být
+            vyřazen dřive než byl vytvořen).</li>
+          <li>Atribut <em>last_update_time</em> musí být větší jak atribut <em>create_time</em> (počítač nemůže
+            být editován dřive než byl vytvořen).</li>
+            <li>Atribut <em>guarantees</em> musí být větší jak atribut <em>create_time</em>.</li>
+            <li>Atribut <em>mac_address</em> nesmí být null.</li>
+            <li>Atribut <em>computer_name</em> nesmí být null.</li>
+        </ul>
+      </li>
+      <li>Tabulka USER
+        <ul>
+          <li>Atribut <em>user_login</em> musí být unikátní.</li>
+          <li>Atribut <em>user_email_address</em> musí být unikátní.</li>
+          <li>Atribut <em>user_email_address</em> musí obsahovat posobě jdoucí znaky "@" a ".". Dále nesmí začínat ani
+            na znak "@" ani obsahovat dva tyto znaky v jedné adrese.</li>
+            <li>Atribut <em>user_first_name</em> nesmí být null.</li>
+            <li>Atribut <em>user_last_name</em> nesmí být null.</li>
+            <li>Atribut <em>user_login</em> nesmí být null.</li>
+            <li>Atribut <em>user_password</em> nesmí být null.</li>
+        </ul>
+      </li>
+      <li>Tabulka COMPUTER_PARAMETERS
+        <ul>
+          <li>Atribut <em>hdd</em> musí být větší jak 0.</li>
+          <li>Atribut <em>ram</em> musí být větší jak 0.</li>
+          <li>Atribut <em>extername_GPU</em> nesmí být null.</li>
+          <li>Atribut <em>optical_disk_drive</em> nesmí být null.</li>
+          <li>Atribut <em>processor</em> nesmí být null.</li>
+        </ul>
+      </li>
+      <li>Tabulka OS
+        <ul>
+          <li>Atribut <em>os_version</em> musí být větší jak 0.</li>
+          <li>Atribut <em>os_name</em> nesmí být null.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>2.1. Netriviální integritní omezení</h3>
+
+    <p><strong>TODO!</strong></p>
+
+    <h2>3. Slovní návrh API rozhraní „business logiky“</h2>
+
+    <p><strong>TODO!</strong></p>
+
+    <h3>/*DUMMY*/Zaregistrování zakazníka</h3>
+    <p><strong>Název:</strong> registrace_zakaznika</p>
+    <p><strong>Parametry:</strong> email, heslo, jmeno, login, prijmeni,rodne_cislo,telefon</p>
+    <p><strong>Popis:</strong> Pocedura vytvoří nový záznam v tabulce Zákazník. Zákazníka sváže s adresou v databázi.
+    </p>
+
+    <h2>4. Pět slovně formulovaných dotazů nad schématem</h2>
+    <ol>
+      <li>vypsat jména uživatelů, jejichž počítače mají OS macOS.</li>
+      <li>10 naposledy upravených počítačů.</li>
+      <li>seznam ( jméno, příjmení, role, e-mail, název počítače ) všech uživatelů kteří používají daný počítač
+        (computer_id).</li>
+      <li>vypsat všechny parametry počítače, jeho název, jméno uživatele, název OS, název výrobce a modelu, který je
+        stále v záruce 2 let.</li>
+      <li>Vypsani všech uživatelů a seřazení podle počtu počítačů.</li>
+    </ol>
+
+
+    <h2>5. Skript, který vytvoří databázové schéma odpovídající E-R diagramu</h2>
+    <p><strong>Skript:</strong> <a href="05_db_schema.sql">05_db_schema.sql</a></p>
+    <h2>6. Skript, který vytvoří v databázovém schématu dodatečná integritní omezení</h2>
+    <p><strong>Skript:</strong> <a href="06_integritni_omezeni_z_bodu_2.sql">06_integritni_omezeni_z_bodu_2.sql</a></p>
+    <h2>7. Skript, který naplní tabulky testovacími daty</h2>
+    <p><strong>Skript:</strong> <a href="07_testovaci_data.sql">07_testovaci_data.sql</a></p>
+    <h2>8. Skript, který provede postupně všechny navržené dotazy z bodu 4</h2>
+    <p><strong>Skript:</strong> <a href="08_dotazy_z_bodu_4.sql">08_dotazy_z_bodu_4.sql</a></p>
+    <p><strong>Výsledky:</strong> <a href="08_vysledky_dotazu.txt">08_vysledky_dotazu.txt</a></p>
+    <p><strong>Porovnání:</strong> <a href="08_porovnani.txt">08_porovnani.txt</a></p>
+    <h2>9. Skript, který se pokusí porušit všechna dodatečná integritní omezení</h2>
+    <p><strong>Skript:</strong> <a href="09_poruseni_omezeni.txt">09_poruseni_omezeni.txt</a></p>
+    <p><strong>Výstup:</strong> <a href="09_vystup.txt">09_vystup.txt</a></p>
+    <h2>10. Skript pro vytvoření balíku (package) a procedur „business logiky“</h2>
+    <p><strong>Skript:</strong> <a href="10_balik_a_procedury.txt">10_balik_a_procedury</a></p>
+    <h2>11. Ověření procedur „business logiky“</h2>
+    <p><strong>Skript:</strong> <a href="11_testovaci_skript_procedur.txt">11_testovaci_skript_procedur.txt</a></p>
+    <p><strong>Výstupy:</strong> <a href="11_vystup.txt">11_vystup.txt</a></p>
+    <h2>12. Skript, který doplní do tabulky automaticky dopočítávaný sloupec</h2>
+    <p><strong>Skript:</strong> <a href="12_odvozene_hodnoty.txt">12_odvozene_hodnoty.txt</a></p>
+    <h2>13. Skript, který vytvoří úložiště ještě jednou v „objektové“ podobě</h2>
+    <p><strong>Skript:</strong> <a href="13_objektova_podoba.txt">13_objektova_podoba.txt</a></p>
+    <h2>14. Skript, který provede pět dotazů znovu, nad objektovými tabulkami</h2>
+    <p><strong>Skript:</strong> <a href="14_objektove_dotazy_z_bodu_4.txt">14_objektove_dotazy_z_bodu_4.txt</a></p>
+    <p><strong>Výstup:</strong> <a href="14_vystup.txt">14_vystup.txt</a></p>
+    <h2>15. Navrhněte slovně fakta a dimenze pro datový sklad</h2>
+
+
+
+
+    <h2 style="margin-top: 50px;">Skript pro vyčištění databáze</h2>
+    <p style="margin-bottom: 10px; padding-bottom: 15px;"><strong>Skript:</strong> <a href="16_drop.txt">drop.txt</a>
+    </p>
+  </div>
 </body>
+
 </html>
