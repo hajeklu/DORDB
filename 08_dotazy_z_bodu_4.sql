@@ -1,4 +1,5 @@
 SET AUTOTRACE ON;
+spool '08_vysledky_dotazu.txt';
 
 /*
  1. vypsat jména uživatelù, jejichž poèítaèe mají OS macOS (JOIN)
@@ -63,3 +64,4 @@ select u.user_first_name as Jméno, u.user_last_name as Pøíjmení, count(c.compute
 group by u.user_first_name, u.user_last_name order by Poèet_poèítaèù desc;
 
 SET AUTOTRACE OFF;
+spool off;

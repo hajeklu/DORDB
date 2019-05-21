@@ -1,0 +1,203 @@
+> --last_update_time > create_time
+> INSERT INTO "A_COMPUTER" (COMPUTER_ID, BPCS_SESSIONS, COMMENTS, CREATE_TIME, GUARANTEES, INVENTORY_NUMBER, LAST_UPDATE_TIME, MAC_ADDRESS, COMPUTER_NAME, SERIAL_NUMBER, COMPUTER_BRAND_ID, COMPUTER_PARAMETERS_ID, OS_ID, USER_ID) VALUES ('9999', 'BPCS_1_FRYCZ-9999, BPCS_2_FRYCZ-9998, BPCS_3_FRYCZ-9998', 'Comment', TO_DATE('06.06.1930', 'DD.MM.YYYY'), TO_DATE('06.06.1941', 'DD.MM.YYYY'), 'FRYCZ - 9998/83707SW:A2:F5:8B:FE:41', TO_DATE('12.05.1920', 'DD.MM.YYYY'), 'SW:A2:F5:8B:FE:41', 'FRYCZ-9998', 'OACRPJPH9IW0K25EX', '87', '1199', '1', '1328')
+
+Error starting at line : 3 in command -
+INSERT INTO "A_COMPUTER" (COMPUTER_ID, BPCS_SESSIONS, COMMENTS, CREATE_TIME, GUARANTEES, INVENTORY_NUMBER, LAST_UPDATE_TIME, MAC_ADDRESS, COMPUTER_NAME, SERIAL_NUMBER, COMPUTER_BRAND_ID, COMPUTER_PARAMETERS_ID, OS_ID, USER_ID) VALUES ('9999', 'BPCS_1_FRYCZ-9999, BPCS_2_FRYCZ-9998, BPCS_3_FRYCZ-9998', 'Comment', TO_DATE('06.06.1930', 'DD.MM.YYYY'), TO_DATE('06.06.1941', 'DD.MM.YYYY'), 'FRYCZ - 9998/83707SW:A2:F5:8B:FE:41', TO_DATE('12.05.1920', 'DD.MM.YYYY'), 'SW:A2:F5:8B:FE:41', 'FRYCZ-9998', 'OACRPJPH9IW0K25EX', '87', '1199', '1', '1328')
+Error report -
+SQL Error: ORA-00001: nesplnìna podmínka jedineènosti (DOHAJEKLU1.UQ_COMPUTER_NAME)
+00001. 00000 -  "unique constraint (%s.%s) violated"
+*Cause:    An UPDATE or INSERT statement attempted to insert a duplicate key.
+           For Trusted Oracle configured in DBMS MAC mode, you may see
+           this message if a duplicate entry exists at a different level.
+*Action:   Either remove the unique restriction or do not insert the key.
+> --guarantees > create_time
+> INSERT INTO "A_COMPUTER" (COMPUTER_ID, BPCS_SESSIONS, COMMENTS, CREATE_TIME, GUARANTEES, INVENTORY_NUMBER, LAST_UPDATE_TIME, MAC_ADDRESS, COMPUTER_NAME, SERIAL_NUMBER, COMPUTER_BRAND_ID, COMPUTER_PARAMETERS_ID, OS_ID, USER_ID) VALUES ('9999', 'BPCS_1_FRYCZ-9999, BPCS_2_FRYCZ-9998, BPCS_3_FRYCZ-9998', 'Comment', TO_DATE('06.06.1930', 'DD.MM.YYYY'), TO_DATE('06.06.1920', 'DD.MM.YYYY'), 'FRYCZ - 9998/83707SW:A2:F5:8B:FE:41', TO_DATE('12.05.1940', 'DD.MM.YYYY'), 'SW:A2:F5:8B:FE:41', 'FRYCZ-9998', 'OACRPJPH9IW0K25EX', '87', '1199', '1', '1328')
+
+Error starting at line : 6 in command -
+INSERT INTO "A_COMPUTER" (COMPUTER_ID, BPCS_SESSIONS, COMMENTS, CREATE_TIME, GUARANTEES, INVENTORY_NUMBER, LAST_UPDATE_TIME, MAC_ADDRESS, COMPUTER_NAME, SERIAL_NUMBER, COMPUTER_BRAND_ID, COMPUTER_PARAMETERS_ID, OS_ID, USER_ID) VALUES ('9999', 'BPCS_1_FRYCZ-9999, BPCS_2_FRYCZ-9998, BPCS_3_FRYCZ-9998', 'Comment', TO_DATE('06.06.1930', 'DD.MM.YYYY'), TO_DATE('06.06.1920', 'DD.MM.YYYY'), 'FRYCZ - 9998/83707SW:A2:F5:8B:FE:41', TO_DATE('12.05.1940', 'DD.MM.YYYY'), 'SW:A2:F5:8B:FE:41', 'FRYCZ-9998', 'OACRPJPH9IW0K25EX', '87', '1199', '1', '1328')
+Error report -
+SQL Error: ORA-00001: nesplnìna podmínka jedineènosti (DOHAJEKLU1.UQ_COMPUTER_NAME)
+00001. 00000 -  "unique constraint (%s.%s) violated"
+*Cause:    An UPDATE or INSERT statement attempted to insert a duplicate key.
+           For Trusted Oracle configured in DBMS MAC mode, you may see
+           this message if a duplicate entry exists at a different level.
+*Action:   Either remove the unique restriction or do not insert the key.
+> --mac_address not null
+> INSERT INTO "A_COMPUTER" (COMPUTER_ID, BPCS_SESSIONS, COMMENTS, CREATE_TIME, GUARANTEES, INVENTORY_NUMBER, LAST_UPDATE_TIME, COMPUTER_NAME, SERIAL_NUMBER, COMPUTER_BRAND_ID, COMPUTER_PARAMETERS_ID, OS_ID, USER_ID) VALUES ('9999', 'BPCS_1_FRYCZ-9999, BPCS_2_FRYCZ-9998, BPCS_3_FRYCZ-9998', 'Comment', TO_DATE('06.06.1930', 'DD.MM.YYYY'), TO_DATE('06.06.1939', 'DD.MM.YYYY'), 'FRYCZ - 9998/83707SW:A2:F5:8B:FE:41', TO_DATE('12.05.1940', 'DD.MM.YYYY'), 'SW:A2:F5:8B:FE:41', 'FRYCZ-9998', '87', '1199', '1', '1328')
+
+Error starting at line : 9 in command -
+INSERT INTO "A_COMPUTER" (COMPUTER_ID, BPCS_SESSIONS, COMMENTS, CREATE_TIME, GUARANTEES, INVENTORY_NUMBER, LAST_UPDATE_TIME, COMPUTER_NAME, SERIAL_NUMBER, COMPUTER_BRAND_ID, COMPUTER_PARAMETERS_ID, OS_ID, USER_ID) VALUES ('9999', 'BPCS_1_FRYCZ-9999, BPCS_2_FRYCZ-9998, BPCS_3_FRYCZ-9998', 'Comment', TO_DATE('06.06.1930', 'DD.MM.YYYY'), TO_DATE('06.06.1939', 'DD.MM.YYYY'), 'FRYCZ - 9998/83707SW:A2:F5:8B:FE:41', TO_DATE('12.05.1940', 'DD.MM.YYYY'), 'SW:A2:F5:8B:FE:41', 'FRYCZ-9998', '87', '1199', '1', '1328')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_COMPUTER"."MAC_ADDRESS") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --computer_name not null
+> INSERT INTO "A_COMPUTER" (COMPUTER_ID, BPCS_SESSIONS, COMMENTS, CREATE_TIME, GUARANTEES, INVENTORY_NUMBER, LAST_UPDATE_TIME, MAC_ADDRESS, SERIAL_NUMBER, COMPUTER_BRAND_ID, COMPUTER_PARAMETERS_ID, OS_ID, USER_ID) VALUES ('9999', 'BPCS_1_FRYCZ-9999, BPCS_2_FRYCZ-9998, BPCS_3_FRYCZ-9998', 'Comment', TO_DATE('06.06.1930', 'DD.MM.YYYY'), TO_DATE('06.06.1939', 'DD.MM.YYYY'), 'FRYCZ - 9998/83707SW:A2:F5:8B:FE:41', TO_DATE('12.05.1940', 'DD.MM.YYYY'), 'SW:A2:F5:8B:FE:41', 'OACRPJPH9IW0K25EX', '87', '1199', '1', '1328')
+
+Error starting at line : 12 in command -
+INSERT INTO "A_COMPUTER" (COMPUTER_ID, BPCS_SESSIONS, COMMENTS, CREATE_TIME, GUARANTEES, INVENTORY_NUMBER, LAST_UPDATE_TIME, MAC_ADDRESS, SERIAL_NUMBER, COMPUTER_BRAND_ID, COMPUTER_PARAMETERS_ID, OS_ID, USER_ID) VALUES ('9999', 'BPCS_1_FRYCZ-9999, BPCS_2_FRYCZ-9998, BPCS_3_FRYCZ-9998', 'Comment', TO_DATE('06.06.1930', 'DD.MM.YYYY'), TO_DATE('06.06.1939', 'DD.MM.YYYY'), 'FRYCZ - 9998/83707SW:A2:F5:8B:FE:41', TO_DATE('12.05.1940', 'DD.MM.YYYY'), 'SW:A2:F5:8B:FE:41', 'OACRPJPH9IW0K25EX', '87', '1199', '1', '1328')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_COMPUTER"."COMPUTER_NAME") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --user_first_name not null
+> INSERT INTO "A_USER" (USER_ID, USER_LAST_NAME, USER_ROLE, USER_PASSWORD, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Emeney', 'Office', '810YZM', 'EmenJo1', 'jemeneyrr@sina.com.cn')
+
+Error starting at line : 15 in command -
+INSERT INTO "A_USER" (USER_ID, USER_LAST_NAME, USER_ROLE, USER_PASSWORD, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Emeney', 'Office', '810YZM', 'EmenJo1', 'jemeneyrr@sina.com.cn')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_USER"."USER_FIRST_NAME") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --user_last_name not null
+> INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_ROLE, USER_PASSWORD, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Office', '810YZM', 'EmenJo1', 'jemeneyrr@sina.com.cn')
+
+Error starting at line : 18 in command -
+INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_ROLE, USER_PASSWORD, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Office', '810YZM', 'EmenJo1', 'jemeneyrr@sina.com.cn')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_USER"."USER_LAST_NAME") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --user_email_address
+> INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_LAST_NAME, USER_ROLE, USER_PASSWORD, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Emeney', 'Office', '810YZM', 'EmenJo1', 'jemeneyrrsina.com.cn')
+
+Error starting at line : 21 in command -
+INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_LAST_NAME, USER_ROLE, USER_PASSWORD, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Emeney', 'Office', '810YZM', 'EmenJo1', 'jemeneyrrsina.com.cn')
+Error report -
+SQL Error: ORA-02290: kontrolní omezení (DOHAJEKLU1.CHECK_USER_EMAIL_ADDRESS) porušeno
+02290. 00000 -  "check constraint (%s.%s) violated"
+*Cause:    The values being inserted do not satisfy the named check
+           
+*Action:   do not insert values that violate the constraint.
+> INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_LAST_NAME, USER_ROLE, USER_PASSWORD, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Emeney', 'Office', '810YZM', 'EmenJo1', 'jemeneyr@rsina@com.cn')
+
+Error starting at line : 22 in command -
+INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_LAST_NAME, USER_ROLE, USER_PASSWORD, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Emeney', 'Office', '810YZM', 'EmenJo1', 'jemeneyr@rsina@com.cn')
+Error report -
+SQL Error: ORA-02290: kontrolní omezení (DOHAJEKLU1.CHECK_USER_EMAIL_ADDRESS) porušeno
+02290. 00000 -  "check constraint (%s.%s) violated"
+*Cause:    The values being inserted do not satisfy the named check
+           
+*Action:   do not insert values that violate the constraint.
+> --user_password not null
+> INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_LAST_NAME, USER_ROLE, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Emeney', 'Office', 'EmenJo1', 'jemeneyrr@sina.com.cn')
+
+Error starting at line : 25 in command -
+INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_LAST_NAME, USER_ROLE, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Emeney', 'Office', 'EmenJo1', 'jemeneyrr@sina.com.cn')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_USER"."USER_PASSWORD") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --user_login not null
+> INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_LAST_NAME, USER_ROLE, USER_PASSWORD, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Emeney', 'Office', '810YZM', 'jemeneyrr@sina.com.cn')
+
+Error starting at line : 28 in command -
+INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_LAST_NAME, USER_ROLE, USER_PASSWORD, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Emeney', 'Office', '810YZM', 'jemeneyrr@sina.com.cn')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_USER"."USER_LOGIN") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --user_role not null
+> INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_LAST_NAME, USER_PASSWORD, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Emeney', '810YZM', 'EmenJo1', 'jemeneyrr1@sina.com.cn')
+
+Error starting at line : 31 in command -
+INSERT INTO "A_USER" (USER_ID, USER_FIRST_NAME, USER_LAST_NAME, USER_PASSWORD, USER_LOGIN, USER_EMAIL_ADDRESS) VALUES ('2001', 'Joyann', 'Emeney', '810YZM', 'EmenJo1', 'jemeneyrr1@sina.com.cn')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_USER"."USER_ROLE") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --hdd > 0
+> INSERT INTO "A_COMPUTER_PARAMETERS" (COMPUTER_PARAMETERS_ID, EXTERNAME_GPU, OPTICAL_DISK_DRIVE, HDD, PROCESSOR, RAM) VALUES ('1200', '0', '1', '-1', 'itanium', '512')
+
+Error starting at line : 34 in command -
+INSERT INTO "A_COMPUTER_PARAMETERS" (COMPUTER_PARAMETERS_ID, EXTERNAME_GPU, OPTICAL_DISK_DRIVE, HDD, PROCESSOR, RAM) VALUES ('1200', '0', '1', '-1', 'itanium', '512')
+Error report -
+SQL Error: ORA-02290: kontrolní omezení (DOHAJEKLU1.CHECK_HDD) porušeno
+02290. 00000 -  "check constraint (%s.%s) violated"
+*Cause:    The values being inserted do not satisfy the named check
+           
+*Action:   do not insert values that violate the constraint.
+> --ram > 0
+> INSERT INTO "A_COMPUTER_PARAMETERS" (COMPUTER_PARAMETERS_ID, EXTERNAME_GPU, OPTICAL_DISK_DRIVE, HDD, PROCESSOR, RAM) VALUES ('1200', '0', '1', '256', 'itanium', '-1')
+
+Error starting at line : 37 in command -
+INSERT INTO "A_COMPUTER_PARAMETERS" (COMPUTER_PARAMETERS_ID, EXTERNAME_GPU, OPTICAL_DISK_DRIVE, HDD, PROCESSOR, RAM) VALUES ('1200', '0', '1', '256', 'itanium', '-1')
+Error report -
+SQL Error: ORA-02290: kontrolní omezení (DOHAJEKLU1.CHECK_RAM) porušeno
+02290. 00000 -  "check constraint (%s.%s) violated"
+*Cause:    The values being inserted do not satisfy the named check
+           
+*Action:   do not insert values that violate the constraint.
+> --extername_GPU not null
+> INSERT INTO "A_COMPUTER_PARAMETERS" (COMPUTER_PARAMETERS_ID, OPTICAL_DISK_DRIVE, HDD, PROCESSOR, RAM) VALUES ('1200', '1', '256', 'itanium', '512')
+
+Error starting at line : 40 in command -
+INSERT INTO "A_COMPUTER_PARAMETERS" (COMPUTER_PARAMETERS_ID, OPTICAL_DISK_DRIVE, HDD, PROCESSOR, RAM) VALUES ('1200', '1', '256', 'itanium', '512')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_COMPUTER_PARAMETERS"."EXTERNAME_GPU") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --optical_disk_drive not null
+> INSERT INTO "A_COMPUTER_PARAMETERS" (COMPUTER_PARAMETERS_ID, EXTERNAME_GPU, HDD, PROCESSOR, RAM) VALUES ('1200', '0', '256', 'itanium', '512')
+
+Error starting at line : 43 in command -
+INSERT INTO "A_COMPUTER_PARAMETERS" (COMPUTER_PARAMETERS_ID, EXTERNAME_GPU, HDD, PROCESSOR, RAM) VALUES ('1200', '0', '256', 'itanium', '512')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_COMPUTER_PARAMETERS"."OPTICAL_DISK_DRIVE") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --processor not null
+> INSERT INTO "A_COMPUTER_PARAMETERS" (COMPUTER_PARAMETERS_ID, EXTERNAME_GPU, OPTICAL_DISK_DRIVE, HDD, RAM) VALUES ('1200', '0', '1', '256', '-1')
+
+Error starting at line : 46 in command -
+INSERT INTO "A_COMPUTER_PARAMETERS" (COMPUTER_PARAMETERS_ID, EXTERNAME_GPU, OPTICAL_DISK_DRIVE, HDD, RAM) VALUES ('1200', '0', '1', '256', '-1')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_COMPUTER_PARAMETERS"."PROCESSOR") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --os_version > 0
+> INSERT INTO "A_OS" (OS_ID, OS_NAME, OS_VERSION) VALUES ('40', 'HoneyWell2', '-1')
+
+Error starting at line : 49 in command -
+INSERT INTO "A_OS" (OS_ID, OS_NAME, OS_VERSION) VALUES ('40', 'HoneyWell2', '-1')
+Error report -
+SQL Error: ORA-02290: kontrolní omezení (DOHAJEKLU1.CHECK_OS_VERSION) porušeno
+02290. 00000 -  "check constraint (%s.%s) violated"
+*Cause:    The values being inserted do not satisfy the named check
+           
+*Action:   do not insert values that violate the constraint.
+> --os_name not null
+> INSERT INTO "A_OS" (OS_ID, OS_VERSION) VALUES ('40', '64')
+
+Error starting at line : 52 in command -
+INSERT INTO "A_OS" (OS_ID, OS_VERSION) VALUES ('40', '64')
+Error report -
+SQL Error: ORA-01400: do ("DOHAJEKLU1"."A_OS"."OS_NAME") nelze vložit hodnotu NULL
+01400. 00000 -  "cannot insert NULL into (%s)"
+*Cause:    An attempt was made to insert NULL into previously listed objects.
+*Action:   These objects cannot accept NULL values.
+> --Pokud ma novy pocitac vyplneneho vyrobce a model (COMPUTER_BRAND), pak jeho SERIAL_NUMBER nesmi byt NULL
+> INSERT INTO "A_COMPUTER" (COMPUTER_ID, BPCS_SESSIONS, COMMENTS, CREATE_TIME, GUARANTEES, INVENTORY_NUMBER, LAST_UPDATE_TIME, MAC_ADDRESS, COMPUTER_NAME, COMPUTER_BRAND_ID, COMPUTER_PARAMETERS_ID, OS_ID, USER_ID) VALUES ('10000', 'BPCS_1_FRYCZ-9999, BPCS_2_FRYCZ-9998, BPCS_3_FRYCZ-9998', 'comment', TO_DATE('06.06.1939', 'DD.MM.YYYY'), TO_DATE('06.06.1941', 'DD.MM.YYYY'), 'FRYCZ - 9998/83707SW:A2:F5:8B:FE:411', TO_DATE('12.05.2019', 'DD.MM.YYYY'), 'SW:A2:F5:8B:FE:411', 'FRYCZ-9999', '87', '1199', '1', '1328')
+
+Error starting at line : 55 in command -
+INSERT INTO "A_COMPUTER" (COMPUTER_ID, BPCS_SESSIONS, COMMENTS, CREATE_TIME, GUARANTEES, INVENTORY_NUMBER, LAST_UPDATE_TIME, MAC_ADDRESS, COMPUTER_NAME, COMPUTER_BRAND_ID, COMPUTER_PARAMETERS_ID, OS_ID, USER_ID) VALUES ('10000', 'BPCS_1_FRYCZ-9999, BPCS_2_FRYCZ-9998, BPCS_3_FRYCZ-9998', 'comment', TO_DATE('06.06.1939', 'DD.MM.YYYY'), TO_DATE('06.06.1941', 'DD.MM.YYYY'), 'FRYCZ - 9998/83707SW:A2:F5:8B:FE:411', TO_DATE('12.05.2019', 'DD.MM.YYYY'), 'SW:A2:F5:8B:FE:411', 'FRYCZ-9999', '87', '1199', '1', '1328')
+Error report -
+SQL Error: ORA-20000: Pole serial_number musí být vyplnìno.
+ORA-06512: na "DOHAJEKLU1.KONTROLA_BRAND", line 32
+ORA-06512: na "DOHAJEKLU1.BRAND_COM", line 2
+ORA-04088: chyba bìhem provádìní triggeru 'DOHAJEKLU1.BRAND_COM'
+20000. 00000 -  "%s"
+*Cause:    The stored procedure 'raise_application_error'
+           was called which causes this error to be generated.
+*Action:   Correct the problem as described in the error message or contact
+           the application administrator or DBA for more information.

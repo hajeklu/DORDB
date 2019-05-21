@@ -1,6 +1,3 @@
-
-ALTER TABLE A_COMPUTER
-	ADD CONSTRAINT check_discarded_time CHECK (discarded_time > create_time);
     
 ALTER TABLE A_COMPUTER
 	ADD CONSTRAINT check_last_update_time CHECK (last_update_time > create_time);
