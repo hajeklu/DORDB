@@ -36,7 +36,7 @@ create type t_computer_brand as object(
 create type t_computer as object(
    computer_id NUMBER,
    bpcs_seassions VARCHAR2(255),
-   comments VARCHAR2(255),
+   comments VARCHAR2(1023),
    create_time DATE,
    discarded_time DATE,
    guarantees DATE,
@@ -45,10 +45,10 @@ create type t_computer as object(
    mac_address VARCHAR2(255),
    computer_name VARCHAR2(255),
    serial_number VARCHAR2(255),
-   computer_brand ref t_computer_brand,
-   computer_parameters ref t_computer_parameters,
-   os ref t_os,
-   usr ref t_user
+   computer_brand_id ref t_computer_brand,
+   computer_parameters_id ref t_computer_parameters,
+   os_id ref t_os,
+   user_id ref t_user
 );
 
 create table obj_a_computer_brand of t_computer_brand;
@@ -56,3 +56,15 @@ create table obj_a_computer_parameters of t_computer_parameters;
 create table obj_a_user of t_user;
 create table obj_a_os of t_os;
 create table obj_a_computer of t_computer;
+
+
+-- napleni objektovych tabulek
+INSERT INTO OBJ_A_OS SELECT * FROM A_OS;
+INSERT INTO OBJ_A_USER SELECT * FROM A_USER;
+INSERT INTO OBJ_A_COMPUTER_BRAND SELECT * FROM A_COMPUTER_BRAND;
+INSERT INTO OBJ_A_COMPUTER_PARAMETERS SELECT * FROM A_COMPUTER_PARAMETERS;
+
+INSERT INTO OBJ_A_COMPUTER SELECT z.computer_id,z.bpcs_sessions,z.comments,z.create_time,z.discarded_time,z.guarantees,z.inventory_number,z.last_update_time,z.mac_address,z.computer_name,z.serial_number,
+(SELECT REF (o) FROM OBJ_A_COMPUTER_BRAND o WHERE o.computer_brand_id = z.computer_brand_id),(SELECT REF (o) FROM OBJ_A_COMPUTER_PARAMETERS o WHERE o.computer_parameters_id = z.computer_parameters_id) 
+,(SELECT REF (o) FROM OBJ_A_OS o WHERE o.os_id = z.os_id),(SELECT REF (o) FROM OBJ_A_USER o WHERE o.user_id = z.user_id) 
+FROM A_COMPUTER z ;
