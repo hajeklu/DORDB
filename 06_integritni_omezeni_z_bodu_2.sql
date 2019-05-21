@@ -58,3 +58,51 @@ ALTER TABLE A_OS
     
 ALTER TABLE A_OS
 	MODIFY os_name VARCHAR2(255) NOT NULL;
+
+
+--Pokud ma novy pocitac vyplneneho vyrobce a model (COMPUTER_BRAND), pak jeho SERIAL_NUMBER nesmi byt NULL
+create or replace PROCEDURE kontrola_brand (computerid IN NUMBER) AS
+glob_serial VARCHAR2(255);
+glob_model VARCHAR2(255);
+glob_brand_maker VARCHAR2(255);
+BEGIN
+
+  BEGIN
+  select computer_brand_maker into glob_brand_maker from a_computer_brand join a_computer on (a_computer_brand.computer_brand_id=a_computer.computer_brand_id) where computerid = a_computer.computer_id;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        glob_brand_maker := NULL;
+  END;
+  
+  BEGIN
+  select compuer_model into glob_model from a_computer_brand join a_computer on (a_computer_brand.computer_brand_id=a_computer.computer_brand_id) where computerid = a_computer.computer_id;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        glob_model := NULL;
+  END;
+
+    IF(trim(glob_brand_maker) is not NULL OR trim(glob_model) is not NULL) THEN
+      
+      BEGIN
+      select c.serial_number into glob_serial from a_computer_brand b join a_computer c on (b.computer_brand_id=c.computer_brand_id) where computerid = c.computer_id;
+        EXCEPTION
+      WHEN NO_DATA_FOUND THEN
+          glob_serial := NULL;
+      END;
+      
+      -- vyhození vyjimky
+      IF(glob_serial is NULL) THEN
+        RAISE_APPLICATION_ERROR(-20000, 'Pole serial_number musí být vyplnìno.');
+      END IF;
+    END IF;
+END;
+
+/
+CREATE TRIGGER brand_com
+BEFORE insert
+ON A_COMPUTER
+FOR EACH ROW
+BEGIN
+kontrola_brand(:NEW.COMPUTER_ID);
+END;
+/
