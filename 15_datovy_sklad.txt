@@ -1,0 +1,4 @@
+Tabulka faktù: computer
+Tabulka dimenzí: user, computer_brand, os, parameters.
+Moné analızy: Jakıch poèítaèù s urèitım druhem operaèního systému má firma nejvíce (firma obmìòuje poèítaèe se starım OS). 
+Jakı uivatel má nejvíce poèítaèù s Windows 10. Jakı procesor je ve firmì nejvíce zastoupen. Jaké je procento poèítaèù které mají optickou mechaniku.
