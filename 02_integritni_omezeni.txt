@@ -1,6 +1,5 @@
 A) Triviální integritní omezení
 Tabulka A_Computer
-Atribut discarded_time musí být vitší než create_time.
 Atribut guarantees musí být vitší než create_time.
 Atribut last_update_time musí být vitší než create_time.
 Atribut mac_address musí být neprázdný a unikátní - zajištino unikátním klíeem.
