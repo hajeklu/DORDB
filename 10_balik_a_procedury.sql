@@ -15,7 +15,7 @@ create or replace PACKAGE BODY pocitacova_databaze_api AS
   PROCEDURE new_user (Ifirstname IN VARCHAR2, Ilastname IN VARCHAR2, Iuserrole IN VARCHAR2, Iuserpassword IN VARCHAR2, Ilogin IN VARCHAR2, Iemail IN VARCHAR2) AS
     BEGIN
     if(trim(Ifirstname) is not null and trim(Ilastname) is not null and trim(Ifirstname) is not null and trim(Ilogin) is not null and trim(Iuserpassword) is not null and trim(Iuserrole) is not null and trim(Iemail) is not null) then
-      INSERT INTO A_USER VALUES (seq_User.nextval, Ifirstname, Ilastname, Iuserrole, Iuserpassword, Ilogin, Iemail, null);
+      INSERT INTO A_USER VALUES (seq_User.nextval, Ifirstname, Ilastname, Iuserrole, Iuserpassword, Ilogin, Iemail); --v pripade, ze jsme jiz udelali bod 12 tzn pridali uzivatelum sloupec prumerne pameti RAM, pak je zde potreba pridat novy parametr INSERTu ",null"
     else
       RAISE_APPLICATION_ERROR(-20000, 'Vyplnte vsechny udaje.');
     end if;
