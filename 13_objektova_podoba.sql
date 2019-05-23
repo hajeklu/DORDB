@@ -2,7 +2,7 @@
  objektový pøístup
 */
 
-create type t_user as object(
+create or replace type t_user as object(
     user_id NUMBER,
     user_first_name VARCHAR2(255),
     user_last_name VARCHAR2(255),
@@ -12,13 +12,13 @@ create type t_user as object(
     user_email_address VARCHAR2(255)
 );
 
-create type t_os as object(
+create or replace type t_os as object(
     os_id NUMBER,
     os_name VARCHAR(255),
     os_version NUMBER
 );
 
-create type t_computer_parameters as object(
+create or replace type t_computer_parameters as object(
     computer_parameters_id NUMBER,
     extername_GPU NUMBER(1,0),
     optical_disk_drive NUMBER(1,0),
@@ -27,13 +27,13 @@ create type t_computer_parameters as object(
     ram NUMBER
 );
 
-create type t_computer_brand as object(
+create or replace type t_computer_brand as object(
     computer_brand_id NUMBER,
     computer_brand_maker VARCHAR2(255),
     compuer_model VARCHAR2(255)
 );
 
-create type t_computer as object(
+create or replace type t_computer as object(
    computer_id NUMBER,
    bpcs_seassions VARCHAR2(255),
    comments VARCHAR2(1023),
