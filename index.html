@@ -51,7 +51,8 @@
 <body>
   <div class="okraj">
     <h1>Počítačová databáze - projekt DORDB</h1>
-
+  <p><strong>Autoři:</strong> Luboš Hájek, Radim Krátký</p>
+  <p><strong>GitHub:</strong> <a href="https://github.com/hajeklu/DORDB_Database">DORDB_Databáze</a></p>
     <h2>1. E-R diagram</h2>
     <p><a href="01_ER_diagram.png"><img src="01_ER_diagram.png" alt="01_ER_diagram" title="01_ER_diagram" width="844" /></a></p>
 
@@ -171,10 +172,8 @@
     <h2>15. Navrhněte slovně fakta a dimenze pro datový sklad</h2>
     <p><strong>Tabulka faktů:</strong> computer</p>
     <p><strong>Tabulka dimenzí:</strong> user, computer_brand, os, parameters.</p>
-    <p><strong>Možné analýzy:</strong> Jakých počítačů s určitým druhem operačního systému má firma nejvíce (firma
-      obměňuje počítače se starým OS).
-      Jaký uživatel má nejvíce počítačů s Windows 10. Jaký procesor je ve firmě nejvíce zastoupen. Jaké je procento
-      počítačů které mají optickou mechaniku.
+    <p><strong>Možné analýzy:</strong> Jakých počítačů s určitým druhem operačního systému má firma nejvíce (firma obměňuje počítače se starým OS), kdo tyto počítače vlastní ? (user_type). 
+      Jaký uživatel má nejvíce počítačů s Windows 10 a procesorem i5 (Procesory i5 mají ve Windwos 10 bezpečnosti chybu). Jaký procesor je ve firmě nejvíce zastoupen u výrobce Lenovo. Jaké je procento počítačů které mají optickou mechaniku, procesor i3, 8gb ram a vlastní je mannager. Všechny počítače a jména uživatů kteří mají optickou mechaniku, procesor i3, 4gb ram a vlastní je mannager.
     </p>
     <h2 style="margin-top: 50px;">Skript pro vyčištění databáze</h2>
     <p style="margin-bottom: 10px; padding-bottom: 15px;"><strong>Skript:</strong> <a href="16_drop.sql">drop.sql</a>

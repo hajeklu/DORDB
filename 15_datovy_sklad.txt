@@ -1,4 +1,4 @@
 Tabulka faktù: computer
 Tabulka dimenzí: user, computer_brand, os, parameters.
-Moné analızy: Jakıch poèítaèù s urèitım druhem operaèního systému má firma nejvíce (firma obmìòuje poèítaèe se starım OS). 
-Jakı uivatel má nejvíce poèítaèù s Windows 10. Jakı procesor je ve firmì nejvíce zastoupen. Jaké je procento poèítaèù které mají optickou mechaniku.
+Moné analızy: Jakıch poèítaèù s urèitım druhem operaèního systému má firma nejvíce (firma obmìòuje poèítaèe se starım OS), kdo tyto poèítaèe vlastní ? (user_type). 
+Jakı uivatel má nejvíce poèítaèù s Windows 10 a procesorem i5 (Procesory i5 mají ve Windwos 10 bezpeènosti chybu). Jakı procesor je ve firmì nejvíce zastoupen u vırobce Lenovo. Všechny poèítaèe a jména uivatù kteøí mají optickou mechaniku, procesor i3, 4gb ram a vlastní je mannager.
