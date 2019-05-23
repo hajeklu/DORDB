@@ -53,7 +53,7 @@
     <h1>Počítačová databáze - projekt DORDB</h1>
 
     <h2>1. E-R diagram</h2>
-    <p><a href="er_diagram.png"><img src="er_diagram.png" alt="er_diagram" title="er_diagram" width="600" /></a></p>
+    <p><a href="01_ER_diagram.png"><img src="01_ER_diagram.png" alt="01_ER_diagram" title="01_ER_diagram" width="844" /></a></p>
 
     <h2>2. Slovní popis dodatečných integritních omezení</h2>
     <h3>2.1. Triviální integritiní omezení</h3>
@@ -68,9 +68,9 @@
             vyřazen dřive než byl vytvořen).</li>
           <li>Atribut <em>last_update_time</em> musí být větší jak atribut <em>create_time</em> (počítač nemůže
             být editován dřive než byl vytvořen).</li>
-            <li>Atribut <em>guarantees</em> musí být větší jak atribut <em>create_time</em>.</li>
-            <li>Atribut <em>mac_address</em> nesmí být null.</li>
-            <li>Atribut <em>computer_name</em> nesmí být null.</li>
+          <li>Atribut <em>guarantees</em> musí být větší jak atribut <em>create_time</em>.</li>
+          <li>Atribut <em>mac_address</em> nesmí být null.</li>
+          <li>Atribut <em>computer_name</em> nesmí být null.</li>
         </ul>
       </li>
       <li>Tabulka USER
@@ -79,10 +79,10 @@
           <li>Atribut <em>user_email_address</em> musí být unikátní.</li>
           <li>Atribut <em>user_email_address</em> musí obsahovat posobě jdoucí znaky "@" a ".". Dále nesmí začínat ani
             na znak "@" ani obsahovat dva tyto znaky v jedné adrese.</li>
-            <li>Atribut <em>user_first_name</em> nesmí být null.</li>
-            <li>Atribut <em>user_last_name</em> nesmí být null.</li>
-            <li>Atribut <em>user_login</em> nesmí být null.</li>
-            <li>Atribut <em>user_password</em> nesmí být null.</li>
+          <li>Atribut <em>user_first_name</em> nesmí být null.</li>
+          <li>Atribut <em>user_last_name</em> nesmí být null.</li>
+          <li>Atribut <em>user_login</em> nesmí být null.</li>
+          <li>Atribut <em>user_password</em> nesmí být null.</li>
         </ul>
       </li>
       <li>Tabulka COMPUTER_PARAMETERS
@@ -104,17 +104,31 @@
 
     <h3>2.1. Netriviální integritní omezení</h3>
 
-    <p><strong>TODO!</strong></p>
+    <ul><li>Tabulka COMPUTER
+      <ul>
+        <li>Jsou-li v tabulce <em>COMPUTER</em> vyplniny atributy <em>computer_brand_maker</em> a <em>computer_model</em> pro daný počítač, pak musí být v tabulce <em>A_Computer</em> vyplnin i <em></em>atribut serial_number</em></li>
+      </ul>
+    </li>
+  </ul>
 
     <h2>3. Slovní návrh API rozhraní „business logiky“</h2>
 
-    <p><strong>TODO!</strong></p>
+    <h3>Zaregistrování uživatele</h3>
+    <p><strong>Název:</strong> new_user</p>
+    <p><strong>Parametry:</strong>first_name, last_name, role, password, login, email_address</p>
+    <p><strong>Popis:</strong> Procedura ověří zda je zadný uživatel validní a vytvoří nový záznam v tabulce User</p>
 
-    <h3>/*DUMMY*/Zaregistrování zakazníka</h3>
-    <p><strong>Název:</strong> registrace_zakaznika</p>
-    <p><strong>Parametry:</strong> email, heslo, jmeno, login, prijmeni,rodne_cislo,telefon</p>
-    <p><strong>Popis:</strong> Pocedura vytvoří nový záznam v tabulce Zákazník. Zákazníka sváže s adresou v databázi.
-    </p>
+    <h3>Přidání nově koupeného počítače do databáze</h3>
+    <p><strong>Název:</strong> new_computer </p>
+    <p><strong>Parametry:</strong>Ibpcs_sessions, Icomments, Icreate_time, Iguarantees, Iinventory_number, Ilast_update_time, Imac_address, Icomputer_name, Iserial_number,
+      Icomputer_brand_maker, Icompuer_model,
+      Iextername_gpu, Ioptical_disk_drive, Ihdd, Iprocessor, Iram,
+      Ios_name, Ios_version,
+      Ifirstname, Ilastname, Iuserrole, Iuserpassword, Ilogin, Iemail</p>
+    <p><strong>Popis:</strong> Pokud se jedná o model počítače, který v databázi ještě nemáme, procedůra nejdříve vytvoří nový záznam modelu.</p>
+    <p>Pokud se jedná o počítač, který má OS, který v databázi ještě nemáme, procedůra nejprve vytvoří nový záznam do tabulky OS.</p>
+    <p>Pokud se jedná o počítač, jehož kombinaci parametrů v databázi ještě nemáme, procedůra nejprve vytvoří nový záznam této kombinace.</p>
+    <p>Nakonec procedura vytvoří počítač s určitými charakteristikami. Počítač sváže s uživatelem, výrobcem daného modelu, operačním systémem a kombinací parametrů.</p>
 
     <h2>4. Pět slovně formulovaných dotazů nad schématem</h2>
     <ol>
@@ -137,29 +151,33 @@
     <h2>8. Skript, který provede postupně všechny navržené dotazy z bodu 4</h2>
     <p><strong>Skript:</strong> <a href="08_dotazy_z_bodu_4.sql">08_dotazy_z_bodu_4.sql</a></p>
     <p><strong>Výsledky:</strong> <a href="08_vysledky_dotazu.txt">08_vysledky_dotazu.txt</a></p>
-    <p><strong>Porovnání:</strong> <a href="08_porovnani.txt">08_porovnani.txt</a></p>
+    <p><strong>Porovnání:</strong> <a href="08_porovnani1.txt">08_porovnani1.txt</a></p>
+    <p><strong>Porovnání:</strong> <a href="08_porovnani2.txt">08_porovnani2.txt</a></p>
     <h2>9. Skript, který se pokusí porušit všechna dodatečná integritní omezení</h2>
-    <p><strong>Skript:</strong> <a href="09_poruseni_omezeni.txt">09_poruseni_omezeni.txt</a></p>
+    <p><strong>Skript:</strong> <a href="09_poruseni_omezeni.sql">09_poruseni_omezeni.sql</a></p>
     <p><strong>Výstup:</strong> <a href="09_vystup.txt">09_vystup.txt</a></p>
     <h2>10. Skript pro vytvoření balíku (package) a procedur „business logiky“</h2>
-    <p><strong>Skript:</strong> <a href="10_balik_a_procedury.txt">10_balik_a_procedury</a></p>
+    <p><strong>Skript:</strong> <a href="10_balik_a_procedury.sql">10_balik_a_procedury.sql</a></p>
     <h2>11. Ověření procedur „business logiky“</h2>
-    <p><strong>Skript:</strong> <a href="11_testovaci_skript_procedur.txt">11_testovaci_skript_procedur.txt</a></p>
-    <p><strong>Výstupy:</strong> <a href="11_vystup.txt">11_vystup.txt</a></p>
+    <p><strong>Skript:</strong> <a href="11_testovaci_skript_procedur.sql">11_testovaci_skript_procedur.sql</a></p>
+    <p><strong>Výstupy:</strong> <a href="11_vystup.sql">11_vystup.txt</a></p>
     <h2>12. Skript, který doplní do tabulky automaticky dopočítávaný sloupec</h2>
-    <p><strong>Skript:</strong> <a href="12_odvozene_hodnoty.txt">12_odvozene_hodnoty.txt</a></p>
+    <p><strong>Skript:</strong> <a href="12_odvozene_hodnoty.sql">12_odvozene_hodnoty.sql</a></p>
     <h2>13. Skript, který vytvoří úložiště ještě jednou v „objektové“ podobě</h2>
-    <p><strong>Skript:</strong> <a href="13_objektova_podoba.txt">13_objektova_podoba.txt</a></p>
+    <p><strong>Skript:</strong> <a href="13_objektova_podoba.sql">13_objektova_podoba.sql</a></p>
     <h2>14. Skript, který provede pět dotazů znovu, nad objektovými tabulkami</h2>
-    <p><strong>Skript:</strong> <a href="14_objektove_dotazy_z_bodu_4.txt">14_objektove_dotazy_z_bodu_4.txt</a></p>
+    <p><strong>Skript:</strong> <a href="14_objektove_dotazy_z_bodu_4.sql">14_objektove_dotazy_z_bodu_4.sql</a></p>
     <p><strong>Výstup:</strong> <a href="14_vystup.txt">14_vystup.txt</a></p>
     <h2>15. Navrhněte slovně fakta a dimenze pro datový sklad</h2>
-
-
-
-
+    <p><strong>Tabulka faktů:</strong> computer</p>
+    <p><strong>Tabulka dimenzí:</strong> user, computer_brand, os, parameters.</p>
+    <p><strong>Možné analýzy:</strong> Jakých počítačů s určitým druhem operačního systému má firma nejvíce (firma
+      obměňuje počítače se starým OS).
+      Jaký uživatel má nejvíce počítačů s Windows 10. Jaký procesor je ve firmě nejvíce zastoupen. Jaké je procento
+      počítačů které mají optickou mechaniku.
+    </p>
     <h2 style="margin-top: 50px;">Skript pro vyčištění databáze</h2>
-    <p style="margin-bottom: 10px; padding-bottom: 15px;"><strong>Skript:</strong> <a href="16_drop.txt">drop.txt</a>
+    <p style="margin-bottom: 10px; padding-bottom: 15px;"><strong>Skript:</strong> <a href="16_drop.sql">drop.sql</a>
     </p>
   </div>
 </body>
