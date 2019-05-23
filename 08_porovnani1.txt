@@ -2,56 +2,43 @@ Autotrace Enabled
 Shows the execution plan as well as statistics of the statement.
 Unable to gather statistics please unsure user has correct access.
 The statistic feature requires that the user is granted select on v_$sesstat, v_$statname and v_$session.
-Unable to gather statistics please unsure user has correct access.
-The statistic feature requires that the user is granted select on v_$sesstat, v_$statname and v_$session.
+Chen                                               Huxter                                                         16 
+Lowell                                             Trevenu                                                        13 
+Penn                                               Bartolomeu                                                     13 
+Barbette                                           Cockrem                                                        12 
+Waylin                                             Gredden                                                        12 
+Pavel                                              Tooze                                                          12 
+Adelheid                                           Ivanishev                                                      12 
+Joella                                             Matelaitis                                                     12 
+Waverley                                           Murison                                                        12 
+Georgiana                                          Egar                                                           12 
+Wilhelmine                                         Laterza                                                        11 
+Lu                                                 Player                                                         11 
+Ellery                                             Hendricks                                                      11 
+Stavros                                            Massinger                                                      11 
+Ellary                                             Harpur                                                         11 
+Clemens                                            Blaes                                                          11 
+Emory                                              Hamly                                                          11 
+Ware                                               Tommasi                                                        11 
+Berry                                              Gibbin                                                         11 
+Kristan                                            Pudsall                                                        11 
 
-JM…NO                                   PÿÕJMENÕ                                          PO»ET_PO»ÕTA»Ÿ
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------
-Orlando                                 Offen                                             15
-Parrnell                                Dilleston                                         14
-Leonanie                                Newbold                                           13
-Lucas                                   Asher                                             13
-Celka                                   Ambler                                            13
-Tabbatha                                Garton                                            13
-Elise                                   Finnigan                                          12
-Piper                                   Bisseker                                          12
-Burr                                    Travis                                    	  12
-Mackenzie                               Jouning                                  	  12
-Brande                                  Tirone                                            12
-Kristofer                               Mudie    					  11
-Arlina                                  Alvares                                           11
-Matthieu                                Budgeon                                           11
-Dalenna                                 Da Costa                                          11
-Ab                                      Cossons                                           11
-Euphemia                                Duggan                                       	  11
-Christen                                Licciardo                                         11
-Thacher                                 Howlings                                          11
-Alistair                                Probey                                            11
+ 20 rows selected 
 
-20 rows selected. 
-
-Explain Plan
------------------------------------------------------------
-
-PLAN_TABLE_OUTPUT                                                                                                                                                                                                                                                                                           
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Plan hash value: 996953907
+Plan hash value: 1934148665
  
-----------------------------------------------------------------------------------------------
-| Id  | Operation               | Name       | Rows  | Bytes |TempSpc| Cost (%CPU)| Time     |
-----------------------------------------------------------------------------------------------
-|   0 | SELECT STATEMENT        |            |    20 |  5420 |       |   584   (1)| 00:00:08 |
-|*  1 |  COUNT STOPKEY          |            |       |       |       |            |          |
-|   2 |   VIEW                  |            |  9999 |  2646K|       |   584   (1)| 00:00:08 |
-|*  3 |    SORT ORDER BY STOPKEY|            |  9999 |   283K|   408K|   584   (1)| 00:00:08 |
-|   4 |     HASH GROUP BY       |            |  9999 |   283K|   408K|   584   (1)| 00:00:08 |
-|*  5 |      HASH JOIN OUTER    |            |  9999 |   283K|       |   417   (1)| 00:00:06 |
-
-PLAN_TABLE_OUTPUT                                                                                                                                                                                                                                                                                           
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|   6 |       TABLE ACCESS FULL | A_USER     |  2000 | 42000 |       |     7   (0)| 00:00:01 |
-|   7 |       TABLE ACCESS FULL | A_COMPUTER |  9999 | 79992 |       |   410   (1)| 00:00:05 |
-----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+| Id  | Operation                 | Name       | Rows  | Bytes | Cost (%CPU)| Time     |
+----------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT          |            |    20 |  5420 |   420   (1)| 00:00:06 |
+|*  1 |  COUNT STOPKEY            |            |       |       |            |          |
+|   2 |   VIEW                    |            | 10242 |  2710K|   420   (1)| 00:00:06 |
+|*  3 |    SORT ORDER BY STOPKEY  |            | 10242 |  2970K|   420   (1)| 00:00:06 |
+|   4 |     HASH GROUP BY         |            | 10242 |  2970K|   420   (1)| 00:00:06 |
+|*  5 |      HASH JOIN RIGHT OUTER|            | 10242 |  2970K|   418   (1)| 00:00:06 |
+|   6 |       TABLE ACCESS FULL   | A_COMPUTER | 10242 |   260K|   410   (1)| 00:00:05 |
+|   7 |       TABLE ACCESS FULL   | A_USER     |  2000 |   529K|     7   (0)| 00:00:01 |
+----------------------------------------------------------------------------------------
  
 Predicate Information (identified by operation id):
 ---------------------------------------------------
@@ -59,56 +46,51 @@ Predicate Information (identified by operation id):
    1 - filter(ROWNUM<21)
    3 - filter(ROWNUM<21)
    5 - access("C"."USER_ID"(+)="U"."USER_ID")
+ 
+Note
+-----
+   - dynamic sampling used for this statement (level=2)
 
-Unable to gather statistics please ensure user has correct access.
+Unable to gather statistics please unsure user has correct access.
 The statistic feature requires that the user is granted select on v_$sesstat, v_$statname and v_$session.
+Unable to gather statistics please unsure user has correct access.
+The statistic feature requires that the user is granted select on v_$sesstat, v_$statname and v_$session.
+Chen                                               Huxter                                                         16 
+Lowell                                             Trevenu                                                        13 
+Penn                                               Bartolomeu                                                     13 
+Adelheid                                           Ivanishev                                                      12 
+Waylin                                             Gredden                                                        12 
+Georgiana                                          Egar                                                           12 
+Barbette                                           Cockrem                                                        12 
+Pavel                                              Tooze                                                          12 
+Joella                                             Matelaitis                                                     12 
+Waverley                                           Murison                                                        12 
+Clemens                                            Blaes                                                          11 
+Ellary                                             Harpur                                                         11 
+Lu                                                 Player                                                         11 
+Ware                                               Tommasi                                                        11 
+Wilhelmine                                         Laterza                                                        11 
+Legra                                              Tenby                                                          11 
+Ellery                                             Hendricks                                                      11 
+Berry                                              Gibbin                                                         11 
+Corie                                              Miles                                                          11 
+Stavros                                            Massinger                                                      11 
 
-JM…NO                                  		PÿIJMENÕ				PO»ET_PO»ÕTA»Ÿ
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------
-Orlando                                       	Offen                             	15
-Parrnell                                       	Dilleston                               14
-Celka                                          	Ambler                                  13
-Lucas                                          	Asher                                   13
-Tabbatha                                       	Garton                                  13
-Leonanie                                       	Newbold                                 13
-Elise                                          	Finnigan                                12
-Brande                                         	Tirone                                  12
-Mackenzie                                      	Jouning                                 12
-Burr                                           	Travis                                  12
-Piper                                          	Bisseker                                12
-Dalenna                                        	Da Costa 				11
-Euphemia                                       	Duggan                                  11
-Thacher                                        	Howlings                                11
-Myrtia                                         	Antat                                   11
-Blakelee                                       	Vasilischev                             11
-Christen                                       	Licciardo                               11
-Kristofer                                      	Mudie    				11
-Rockwell                                       	Gerold                                  11
-Matthieu                                       	Budgeon                                 11
+ 20 rows selected 
 
-20 rows selected. 
-
-Explain Plan
------------------------------------------------------------
-
-PLAN_TABLE_OUTPUT                                                                                                                                                                                                                                                                                           
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Plan hash value: 473714256
  
---------------------------------------------------------------------------------------
-| Id  | Operation               | Name       | Rows  | Bytes | Cost (%CPU)| Time     |
---------------------------------------------------------------------------------------
-|   0 | SELECT STATEMENT        |            |    20 |  5420 |     8  (13)| 00:00:01 |
-|   1 |  SORT AGGREGATE         |            |     1 |     4 |            |          |
-|*  2 |   TABLE ACCESS FULL     | A_COMPUTER |     5 |    20 |   410   (1)| 00:00:05 |
-|*  3 |  COUNT STOPKEY          |            |       |       |            |          |
-|   4 |   VIEW                  |            |  2000 |   529K|     8  (13)| 00:00:01 |
-|*  5 |    SORT ORDER BY STOPKEY|            |  2000 | 42000 |     8  (13)| 00:00:01 |
-
-PLAN_TABLE_OUTPUT                                                                                                                                                                                                                                                                                           
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|   6 |     TABLE ACCESS FULL   | A_USER     |  2000 | 42000 |     7   (0)| 00:00:01 |
---------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+| Id  | Operation               | Name       | Rows  | Bytes |TempSpc| Cost (%CPU)| Time     |
+----------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT        |            |    20 |  5420 |       |   126   (1)| 00:00:02 |
+|   1 |  SORT AGGREGATE         |            |     1 |    13 |       |            |          |
+|*  2 |   TABLE ACCESS FULL     | A_COMPUTER |   102 |  1326 |       |   410   (1)| 00:00:05 |
+|*  3 |  COUNT STOPKEY          |            |       |       |       |            |          |
+|   4 |   VIEW                  |            |  2000 |   529K|       |   126   (1)| 00:00:02 |
+|*  5 |    SORT ORDER BY STOPKEY|            |  2000 |   529K|   584K|   126   (1)| 00:00:02 |
+|   6 |     TABLE ACCESS FULL   | A_USER     |  2000 |   529K|       |     7   (0)| 00:00:01 |
+----------------------------------------------------------------------------------------------
  
 Predicate Information (identified by operation id):
 ---------------------------------------------------
@@ -116,7 +98,11 @@ Predicate Information (identified by operation id):
    2 - filter("M"."USER_ID"=:B1)
    3 - filter(ROWNUM<21)
    5 - filter(ROWNUM<21)
+ 
+Note
+-----
+   - dynamic sampling used for this statement (level=2)
 
-Unable to gather statistics please ensure user has correct access.
+Unable to gather statistics please unsure user has correct access.
 The statistic feature requires that the user is granted select on v_$sesstat, v_$statname and v_$session.
 Autotrace Disabled

@@ -1,5 +1,5 @@
 SET AUTOTRACE ON;
-spool '08_vysledky_dotazu6.txt';
+spool '08_vysledky_dotazu.txt';
 
 /*
  1. vypsat jména uživatelù, jejichž poèítaèe mají OS macOS (JOIN)

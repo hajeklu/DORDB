@@ -1,44 +1,30 @@
 Autotrace Enabled
 Shows the execution plan as well as statistics of the statement.
-Unable to gather statistics please unsure user has correct access.
-The statistic feature requires that the user is granted select on v_$sesstat, v_$statname and v_$session.
-Unable to gather statistics please unsure user has correct access.
-The statistic feature requires that the user is granted select on v_$sesstat, v_$statname and v_$session.
-N¡ZEV_PO»ÕTA»E                  V›ROBCE                                 MODEL                       DATUM_POSLEDNI_ZMENY
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------
-FRYCZ-0029                      Hewlett-Packard (HP)                    Spectre                     12.05.19
-FRYCZ-0030                      Lenovo                                  AIO 900 series              12.05.19
-FRYCZ-0031                      Hewlett-Packard (HP)                    Folio                       12.05.19
-FRYCZ-0032                      Asus                                    ZenBook Pro                 12.05.19
-FRYCZ-0033                      Lenovo                                  IdeaPad U300                12.05.19
-FRYCZ-0034                      Apple                                   Macintosh                   12.05.19
-FRYCZ-0035                      Dell                                    Dimension                   12.05.19
-FRYCZ-0001                      Hewlett-Packard (HP)                    X2                          12.05.19
-FRYCZ-0000                      Dell                                    Latitude                    12.05.19
-FRYCZ-0002                      Apple                                   Xserve                      12.05.19
+FRYCZ-7485                                         Lenovo                                             Yoga                                               23.05.15             
+FRYCZ-1963                                         MSI                                                Qosimo                                             23.05.14             
+FRYCZ-9531                                         Apple                                              MacBook Retina                                     23.05.14             
+FRYCZ-1144                                         Acer                                               Ferrari                                            23.05.13             
+FRYCZ-9576                                         MSI                                                T-Series                                           23.05.13             
+FRYCZ-9105                                         MSI                                                Tecra                                              23.05.13             
+FRYCZ-8537                                         Asus                                               E                                                  23.05.13             
+FRYCZ-8523                                         Dell                                               Chromebox                                          23.05.13             
+FRYCZ-3539                                         Hewlett-Packard (HP)                               Envy                                               23.05.13             
+FRYCZ-0738                                         Asus                                               E                                                  23.05.12             
 
-10 rows selected. 
+ 10 rows selected 
 
-Explain Plan
------------------------------------------------------------
-
-PLAN_TABLE_OUTPUT                                                                                                                                                                                                                                                                                           
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Plan hash value: 1573853477
  
 ----------------------------------------------------------------------------------------------------
 | Id  | Operation               | Name             | Rows  | Bytes |TempSpc| Cost (%CPU)| Time     |
 ----------------------------------------------------------------------------------------------------
-|   0 | SELECT STATEMENT        |                  |    10 |  3960 |       |   527   (1)| 00:00:07 |
+|   0 | SELECT STATEMENT        |                  |    10 |  3960 |       |  1336   (1)| 00:00:17 |
 |*  1 |  COUNT STOPKEY          |                  |       |       |       |            |          |
-|   2 |   VIEW                  |                  |  9999 |  3866K|       |   527   (1)| 00:00:07 |
-|*  3 |    SORT ORDER BY STOPKEY|                  |  9999 |   419K|   560K|   527   (1)| 00:00:07 |
-|*  4 |     HASH JOIN           |                  |  9999 |   419K|       |   413   (1)| 00:00:05 |
-|   5 |      TABLE ACCESS FULL  | A_COMPUTER_BRAND |   104 |  2080 |       |     3   (0)| 00:00:01 |
-
-PLAN_TABLE_OUTPUT                                                                                                                                                                                                                                                                                           
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|   6 |      TABLE ACCESS FULL  | A_COMPUTER       |  9999 |   224K|       |   410   (1)| 00:00:05 |
+|   2 |   VIEW                  |                  | 10242 |  3960K|       |  1336   (1)| 00:00:17 |
+|*  3 |    SORT ORDER BY STOPKEY|                  | 10242 |  4220K|  4560K|  1336   (1)| 00:00:17 |
+|*  4 |     HASH JOIN           |                  | 10242 |  4220K|       |   413   (1)| 00:00:05 |
+|   5 |      TABLE ACCESS FULL  | A_COMPUTER_BRAND |   104 | 28184 |       |     3   (0)| 00:00:01 |
+|   6 |      TABLE ACCESS FULL  | A_COMPUTER       | 10242 |  1510K|       |   410   (1)| 00:00:05 |
 ----------------------------------------------------------------------------------------------------
  
 Predicate Information (identified by operation id):
@@ -47,47 +33,42 @@ Predicate Information (identified by operation id):
    1 - filter(ROWNUM<11)
    3 - filter(ROWNUM<11)
    4 - access("C"."COMPUTER_BRAND_ID"="B"."COMPUTER_BRAND_ID")
+ 
+Note
+-----
+   - dynamic sampling used for this statement (level=2)
 
-Unable to gather statistics please ensure user has correct access.
+Unable to gather statistics please unsure user has correct access.
 The statistic feature requires that the user is granted select on v_$sesstat, v_$statname and v_$session.
+Unable to gather statistics please unsure user has correct access.
+The statistic feature requires that the user is granted select on v_$sesstat, v_$statname and v_$session.
+FRYCZ-7485                                         Lenovo                                             Yoga                                               23.05.15             
+FRYCZ-1963                                         MSI                                                Qosimo                                             23.05.14             
+FRYCZ-9531                                         Apple                                              MacBook Retina                                     23.05.14             
+FRYCZ-1144                                         Acer                                               Ferrari                                            23.05.13             
+FRYCZ-9576                                         MSI                                                T-Series                                           23.05.13             
+FRYCZ-9105                                         MSI                                                Tecra                                              23.05.13             
+FRYCZ-8537                                         Asus                                               E                                                  23.05.13             
+FRYCZ-8523                                         Dell                                               Chromebox                                          23.05.13             
+FRYCZ-3539                                         Hewlett-Packard (HP)                               Envy                                               23.05.13             
+FRYCZ-0738                                         Asus                                               E                                                  23.05.12             
 
-N¡ZEV_PO»ÕTA»E                  VYROBCE                                 MODEL                          DATUM_PO
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------
-FRYCZ-0029                      Hewlett-Packard (HP)                    Spectre                        12.05.19
-FRYCZ-0030                      Lenovo                                  AIO 900 series                 12.05.19
-FRYCZ-0031                      Hewlett-Packard (HP)                    Folio                          12.05.19
-FRYCZ-0032                      Asus                                    ZenBook Pro                    12.05.19
-FRYCZ-0033                      Lenovo                                  IdeaPad U300                   12.05.19
-FRYCZ-0034                      Apple                                   Macintosh                      12.05.19
-FRYCZ-0035                      Dell                                    Dimension                      12.05.19
-FRYCZ-0001                      Hewlett-Packard (HP)                    X2                             12.05.19
-FRYCZ-0000                      Dell                                    Latitude                       12.05.19
-FRYCZ-0002                      Apple                                   Xserve                         12.05.19
+ 10 rows selected 
 
-10 rows selected. 
-
-Explain Plan
------------------------------------------------------------
-
-PLAN_TABLE_OUTPUT                                                                                                                                                                                                                                                                                           
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Plan hash value: 3239964460
  
 ---------------------------------------------------------------------------------------------------------
 | Id  | Operation                   | Name              | Rows  | Bytes |TempSpc| Cost (%CPU)| Time     |
 ---------------------------------------------------------------------------------------------------------
-|   0 | SELECT STATEMENT            |                   |    10 |  3960 |       |   482   (1)| 00:00:06 |
-|   1 |  TABLE ACCESS BY INDEX ROWID| A_COMPUTER_BRAND  |     1 |    13 |       |     1   (0)| 00:00:01 |
-|*  2 |   INDEX UNIQUE SCAN         | COMPUTER_BRAND_ID |     1 |       |       |     0   (0)| 00:00:01 |
-|   3 |  TABLE ACCESS BY INDEX ROWID| A_COMPUTER_BRAND  |     1 |    13 |       |     1   (0)| 00:00:01 |
-|*  4 |   INDEX UNIQUE SCAN         | COMPUTER_BRAND_ID |     1 |       |       |     0   (0)| 00:00:01 |
+|   0 | SELECT STATEMENT            |                   |    10 |  3960 |       |   756   (1)| 00:00:10 |
+|   1 |  TABLE ACCESS BY INDEX ROWID| A_COMPUTER_BRAND  |     1 |   142 |       |     1   (0)| 00:00:01 |
+|*  2 |   INDEX UNIQUE SCAN         | COMPUTER_BRAND_ID |     1 |       |       |     1   (0)| 00:00:01 |
+|   3 |  TABLE ACCESS BY INDEX ROWID| A_COMPUTER_BRAND  |     1 |   142 |       |     1   (0)| 00:00:01 |
+|*  4 |   INDEX UNIQUE SCAN         | COMPUTER_BRAND_ID |     1 |       |       |     1   (0)| 00:00:01 |
 |*  5 |  COUNT STOPKEY              |                   |       |       |       |            |          |
-
-PLAN_TABLE_OUTPUT                                                                                                                                                                                                                                                                                           
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|   6 |   VIEW                      |                   |  9999 |  3866K|       |   482   (1)| 00:00:06 |
-|*  7 |    SORT ORDER BY STOPKEY    |                   |  9999 |   224K|   368K|   482   (1)| 00:00:06 |
-|   8 |     TABLE ACCESS FULL       | A_COMPUTER        |  9999 |   224K|       |   410   (1)| 00:00:05 |
+|   6 |   VIEW                      |                   | 10242 |  3960K|       |   756   (1)| 00:00:10 |
+|*  7 |    SORT ORDER BY STOPKEY    |                   | 10242 |  1510K|  1688K|   756   (1)| 00:00:10 |
+|   8 |     TABLE ACCESS FULL       | A_COMPUTER        | 10242 |  1510K|       |   410   (1)| 00:00:05 |
 ---------------------------------------------------------------------------------------------------------
  
 Predicate Information (identified by operation id):
@@ -96,11 +77,12 @@ Predicate Information (identified by operation id):
    2 - access("B"."COMPUTER_BRAND_ID"=:B1)
    4 - access("B"."COMPUTER_BRAND_ID"=:B1)
    5 - filter(ROWNUM<11)
-
-PLAN_TABLE_OUTPUT                                                                                                                                                                                                                                                                                           
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    7 - filter(ROWNUM<11)
+ 
+Note
+-----
+   - dynamic sampling used for this statement (level=2)
 
-Unable to gather statistics please ensure user has correct access.
+Unable to gather statistics please unsure user has correct access.
 The statistic feature requires that the user is granted select on v_$sesstat, v_$statname and v_$session.
 Autotrace Disabled
